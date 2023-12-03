@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>user data</title>
+    <style>
+          table {
+            font-family: arial,helvetica,sans-serif;
+            border-collapse: collase;
+            width: 100%
+              }
+        td,th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+        p{
+        text-align:left;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <h1>View Student</h1>
+    <tr>
+            <th>request_id</th>
+            <th>id</th>
+            <th>start_date</th>
+            <th>end_date</th>
+            <th>reason</th>
+            <th>status</th>
+
+    </tr>
+    {%  for user in data %}
+    <tr>
+            <td>{{ data.request_id }}</td>
+            <td>{{ data.userid }}</td>
+            <td>{{ data.start_date }}</td>
+            <td>{{ data.end_date }}</td>
+            <td>{{ data.reason }}</td>
+            <td>{{ data.status }}</td>
+    </tr>
+   {% endfor %}
+
+</table>
+</body>
+</html>

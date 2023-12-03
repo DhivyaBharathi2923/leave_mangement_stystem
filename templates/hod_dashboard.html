@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>pending requests</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='css/34b729901a37198f5d0414728.css'>
+      <link rel="stylesheet" href="static/table.css">
+      <link href='https://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+</head>
+
+<body style="background-image: linear-gradient(to right top, #1600ff, #9300a5, #930061, #751039, #4c2e2e);">
+    <canvas class="fireworks">
+
+      </canvas>
+  <section>
+
+  <h1>PENDING LEAVE REQUESTS</h1>
+        <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+
+
+                    <th>ID</th>
+                    <th>Request ID</th>
+                    <th>Leave Type</th>
+                    <th>reason</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>status</th>
+                </tr>
+        </thead>
+    </table>
+  </div>
+<div class="tbl-content">
+<table cellpadding="0" cellspacing="0" border="0">
+               {% for data in data %}
+                <tr>
+                    <td>{{data.userid}}</td>
+                    <td>{{data.request_id}}</td>
+                    <td>{{data.leavetype}}</td>
+                     <td>{{data.reason}}</td>
+                    <td>{{data.start_date}}</td>
+                    <td>{{data.end_date}}</td>
+                    <td>
+                      <button><a href="{{ url_for('approve',request_id=data.request_id) }}">Approve</a></button>
+                      <button><a href="{{ url_for('reject',request_id=data.request_id) }}">Reject</a></button>
+                    </td>
+                </tr>
+                {% endfor %}
+
+        </table>
+</section>
+        <ul id="pendingRequests" class="requests-list">
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('/hod_dashboard')
+        .then(response => response.json())
+        .then(request_id => {
+            const pendingRequestsList = document.getElementByid('request_id');
+
+            request_id.forEach(data => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <strong>Employee ID:</strong> ${data.id}<br>
+                    <strong>Request ID:</strong> ${data.request_id}<br>
+                    <strong>Leave Type:</strong> ${data.leavetype}<br>
+                    <strong>Start Date:</strong> ${data.start_date}<br>
+                    <strong>End Date:</strong> ${data.end_date}<br>
+                    <button onclick="approveRequest(${data.request_id})">Approve</button>
+                    <button onclick="rejectRequest(${data.request_id})">Reject</button>
+                `;
+                pendingRequestsList.appendChild(listItem);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching pending requests:', error);
+        });
+});
+
+function approve(request_id) {
+    fetch(`/approve/${request_id}`)
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            location.reload();
+        })
+        .catch(error => {
+            console.error('Error approving request:', error);
+        });
+}
+
+function reject(request_id) {
+    fetch(`/reject/${request_id}`)
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            location.reload();
+        })
+        .catch(error => {
+            console.error('Error rejecting request:', error);
+        });
+}
+</script>
+             <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='js/4032af61ca0478304ab7b31b7.js'></script>
+
+            <!-- Pending leave requests will be inserted here using JavaScript -->
+        </ul>
+    </div>
+
+</body>
+</html>

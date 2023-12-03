@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>About</title>
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<style>
+	@import url('https://fonts.googleapis.com/')
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+header {
+    background-color: #EBB8DD;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+body {
+    display:grid;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+nav{
+	position: fixed;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background: #EBB8DD;
+	transition: all .5s ease;
+}
+.logo{
+	width: 100%;
+	height: 10%;
+	user-select: none;
+}
+nav ul{
+	padding: 0;
+	margin: 0;
+	margin-left: 20px;
+}
+nav ul li{
+	list-style: none;
+	margin: 0 8px;
+	display: inline-block;
+	line-height: 65px;
+	position: relative;
+}
+nav ul li a{
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	padding: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+nav ul li a:hover{
+	padding: 8px 20px;
+	background: #243342;
+}
+nav ul ul{
+	position: relative;
+	display: none;
+	font-family: 'Roboto',sans-serif;
+}
+nav ul li:hover > ul{
+	display: inline-block;
+}
+nav ul ul li{
+	width: 165px;
+	float: none;
+	color: white;
+	position: relative;
+}
+#check{
+	display: none;
+}
+label #btn,label #cancel{
+	position: absolute;
+	cursor: pointer;
+	background: #EBB8DD;
+	border-radius: 5px;
+}
+label #btn{
+	left: 40px;
+	top: 45px;
+	font-size: 35px;
+	color: white;
+	padding: 6px 12px;
+	transition: all .5s ;
+}
+label #cancel{
+	z-index: 1111;
+	left: -305px;
+	top: 22px;
+	font-size: 20px;
+	color: white;
+	padding: 4px 8px;
+	transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+	left: 0;
+}
+#check:checked ~ label #btn{
+	left: 250px;
+	opacity: 0;
+	pointer-events: none;
+}
+#check:checked ~ label #cancel{
+	left: 195px;
+}
+#check:checked ~ section{
+	margin-left: 250px;
+}
+#check:checked ~ section #image{
+	margin-left: 2.8%;
+	transition:all.5s;
+}
+section{
+	background: white;
+	transition:all.5s;
+}
+#image{
+	width:29%;
+	height: 250px;
+	padding:0;
+	margin-left:11%;
+	margin-top:45px;
+	float:left;
+	border-radius:15px;
+}
+#intro{
+	font-family:'Courgette', cursive;
+	width:55%;
+	height: 250px;
+	font-size:x-large;
+	font-weight:800;
+	padding:0 2% 0 2%;
+	margin-top:45px;
+	float:left;
+	line-height:1.55;
+	word-spacing:0.17em;
+	text-align:center;
+	color:grey;
+}
+h3{
+	font-family:cursive;
+	color:#ab4fda;
+	font-weight:300;
+}
+p{
+	fontfamily:'Poppins', sans-serif;;
+	color:black;
+
+}
+#div1{
+	float:left;
+	margin-left:11%;
+}
+#div2{
+	float:left;
+	margin-left:11%;
+	margin-right: 4%;
+	width:30%;
+}
+#check:checked ~ section #div1{
+	margin-left: 2.8%;
+	transition:all.5s;
+}
+#check:checked ~ section #div2{
+	margin-left: 2.8%;
+	transition:all.5s;
+	width:40%;
+}
+#div3{
+	width:30%;
+	float:left;
+	padding-left: 50px;
+	line-height:1;
+	margin-top: 8px;
+}
+#div4{
+	margin-top:22px;
+	width:10%;
+	float:left;
+	padding-left: 50px;
+	line-height:2.4;
+}
+#a1{
+	color: black;
+}
+	#a11{
+	color: black;
+}
+</style>
+
+</head>
+<body>
+  <header>
+        <h1>Welcome, Our about us</h1>
+
+    </header>
+	<input type="checkbox" id="check">
+	<label for="check">
+		<i class="fas fa-bars" id="btn"></i>
+		<i class="fas fa-times" id="cancel"></i>
+	</label>
+	<nav class="sidebar">
+		<div>
+			<img class="logo" src="static/logo.png">
+			<ul>
+				<li><a  href="{{url_for('dashboard')}}">Home</a></li>
+				<li><a href="#">Login <i class="fas fa-caret-down"></i></a>
+					<ul>
+				 <li><a href="{{url_for('adminlogin')}}" class="hover-link">Admin Login</a></li>
+						 <li><a href="{{url_for('login')}}" class="hover-link sign-in">Student Login</a></li>
+
+					</ul>
+				</li><br>
+				<li><a href="{{url_for('about')}}">About</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section>
+		<img id="image" src="static/clg1.jpg">
+		<div>
+			<p id="intro">Vivekanandha College of Education for Women (V.C.Ed.,), was Established by the Angammal Educational Trust in the year 2005. This trust is a renowned, benevolent, charitable, educational trust was founded by Prof.Dr.M.Karunanithi, B.Pharm, M.S. Ph.D., D.Litt, a powerful eminent Educationist.</p>
+		</div>
+
+		<div id="div1">
+			<p>
+				<h3>Vision :</h3>
+				To be an academic institution exclusively for women, in dynamic equilibrium with the social and economic environment, striving continuously for excellence in education, research and technological service to the nation.
+
+			</p>
+		</div>
+
+		<div id="div2">
+			<p>
+				<h3>Our Institutions</h3>
+				<ul>
+					<li>Swamy Vivekanandha Medical College Hospital and Research Institute</li>
+					<li>Vivekanandha Dental College for Women</li>
+					<li>Swamy Vivekanandha Naturopathy and Yoga Medical College</li>
+					<li>Swamy Vivekanandha College of Pharmacy</li>
+					<li>Vivekanandha Pharmacy College for Women</li>
+					<li>Vivekanandha College of Nursing</li>
+				</ul>
+			</p><br>
+		</div>
+
+		<div id="div3">
+			<p>
+				<h3>Our Location :</h3>
+				Vivekanandha Educational Institutions for Women,
+				<br>Elayampalayam,
+				<br>Tiruchengode - TK
+				<br>Namakkal District,
+				<br>Tamilnadu - 637 205
+				<br><a href="tel://9443734417" id="a1">Tel:  +91 94437 34417</a>
+				<br><a href="mailto: vivekanandha.ac.in" id="a11">Email:  vivekanandha.ac.in</a><br>
+			</p>
+		</div>
+
+		<div id="div4">
+			<a href="https://www.facebook.com/VivekanandhaVICAS/"><i class="fab fa-facebook-square"></i></a> FaceBook<br>
+			<a href="https://twitter.com/vivekanandha_in?lang=en"><i class="fab fa-twitter-square" ></i></a>  Twitter<br>
+			<a href="https://www.youtube.com/@vivekanandhaeducationalins6012"><i class="fab fa-youtube"></i></a> Youtube<br><br>
+		</div>
+	</section>
+</body>
+</html>
+
+

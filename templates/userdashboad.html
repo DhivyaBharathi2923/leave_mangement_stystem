@@ -1,0 +1,364 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Home</title>
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+   <style>
+       @import url('https://fonts.googleapis.com/')
+*{
+padding:0;
+margin:o;
+text-decoration:none;
+list-style:none;
+box-sizing:border-box;
+}
+
+header {
+    background-color: #EBB8DD;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+main {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 20px;
+    border: 1px solid #808080;
+}
+
+section{
+    margin-bottom: 20px;
+text-color:#EBB8DD;
+}
+
+body {
+    display:grid;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+nav{
+	position: fixed;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background: #EBB8DD;
+	transition: all .5s ease;
+}
+.logo{
+	width: 100%;
+	height: 20%;
+	user-select: none;
+}
+nav ul{
+	padding: 0;
+	margin: 0;
+	margin-left: 20px;
+}
+nav ul li{
+	list-style: none;
+	margin: 0 8px;
+	display: inline-block;
+	line-height: 65px;
+	position: relative;
+}
+nav ul li a{
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	padding: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+nav ul li a:hover{
+	padding: 8px 20px;
+	background: #EBB8DD;
+}
+nav ul ul{
+	position: relative;
+	display: none;
+	font-family: 'Roboto',sans-serif;
+}
+nav ul li:hover > ul{
+	display: inline-block;
+}
+nav ul ul li{
+	width: 165px;
+	float: none;
+	color: #EBB8DD;
+	position: relative;
+}
+#check{
+	display: none;
+}
+label #btn,label #cancel{
+	position: absolute;
+	cursor: pointer;
+	background: #EBB8DD;
+	border-radius: 3px;
+}
+label #btn{
+	left: 40px;
+	top: 45px;
+	font-size: 35px;
+	color: white;
+	padding: 6px 12px;
+	transition: all .5s ;
+}
+label #cancel{
+	z-index: 1111;
+	left: -305px;
+	top: 22px;
+	font-size: 20px;
+	color: white;
+	padding: 4px 8px;
+	transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+	left: 0;
+}
+#check:checked ~ label #btn{
+	left: 250px;
+	opacity: 0;
+	pointer-events: none;
+}
+#check:checked ~ label #cancel{
+	left: 195px;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{ user.name }}!</h1>
+
+    </header>
+
+    <input type="checkbox" id="check">
+	<label for="check">
+		<i class="fas fa-bars" id="btn"></i>
+		<i class="fas fa-times" id="cancel"></i>
+	</label>
+	<nav class="sidebar">
+		<div>
+			<img class="logo" src="static/logo.png">
+			<ul>
+				<li><a href="{{url_for('dashboard')}}">Home</a></li>
+				<li><a href="#">Account<i class="fas fa-caret-down"></i></a>
+					<ul>
+						<li><a href="{{url_for('login')}}">login</a></li>
+						<li><a href="{{url_for('logout')}}">logout</a></li>
+					</ul>
+				</li><br>
+				<li><a href="{{url_for('about')}}">About</a></li>
+			</ul>
+		</div>
+	</nav>
+    <main>
+        <section id="Leave Apply">
+            <h2><a href="{{url_for('leaveapply')}}"><font style="color:#808080">Leave Apply</font></a></h2>
+
+        </section>
+        <section id="my leave">
+            <h2><a href="{{url_for('leave_status')}}"><font style="color:#808080">leave status</font></a></h2>
+
+        </section>
+        <section id="index">
+            <h2><a href="{{url_for('index')}}"><font style="color:#808080">my leave</font></a></h2>
+
+        </section>
+        <section id="Leave Approvel">
+            <h2><a href="{{url_for('viewapprovel')}}"><font style="color:#808080">Leave Approvel</font></a></h2>
+
+        </section>
+        <section id="Reject">
+            <h2><a href="{{url_for('viewreject')}}"><font style="color:#808080">Leave Reject</font></a></h2>
+
+        </section>
+        <section id="Lougout">
+            <h2><a href="{{url_for('logout')}}"><font style="color:#808080">Logout</font></a></h2>
+
+        </section>
+    </main>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <style >
+    .bg-primary {
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+
+.col-md-4{
+  max-width:20% !important;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #342ac1;
+    border-color: #007bff;
+}
+.text-primary {
+    color: #342ac1!important;
+}
+
+#cpass {
+  display: -webkit-box;
+}
+
+#list-app{
+  font-size:15px;
+}
+
+.btn-primary{
+  background-color: #3c50c1;
+  border-color: #3c50c1;
+}
+      img {
+max-width: 30%;
+height: auto;
+}
+  </style>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item">
+        <a class="nav-link" href="{{url_for('logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  </head>
+  <style type="text/css">
+    button:hover{cursor:pointer;}
+    #inputbtn:hover{cursor:pointer;}
+  </style>
+  <body style="padding-top:50px;">
+   <div class="container-fluid" style="margin-top:50px;">
+    <h3 style = "margin-left: 40%; padding-bottom: 20px;font-family: 'IBM Plex Sans', sans-serif;"> WELCOME,  {{ user.name }}! </h3>
+    <div class="row">
+  <div class="col-md-4" style="max-width:25%;margin-top: 3%;">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action"  href="{{url_for('leaveapply')}}">Leave Apply</a>
+      <a class="list-group-item list-group-item-action" href="{{url_for('leave_status')}}" >Leave Status</a>
+      <a class="list-group-item list-group-item-action" href="{{url_for('index')}}" >My Leave</a>
+      <a class="list-group-item list-group-item-action" href="{{url_for('viewapprovel')}}" >Leave Approval</a>
+      <a class="list-group-item list-group-item-action" href="{{url_for('viewreject')}}" >Leave Reject</a>
+
+
+    </div><br>
+  </div>
+  <div class="col-md-8" style="margin-top: 3%;">
+    <div class="tab-content" id="nav-tabContent" style="width: 950px;">
+      <div class="tab-pane fade show active" id="list-dash" role="tabpanel" aria-labelledby="list-dash-list">
+        <div class="container-fluid container-fullw bg-white" >
+              <div class="row">
+               <div class="col-sm-4">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                        <img src="./static/asset 188.png" class="fa fa-square fa-stack-2x text-primary" alt="">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-users fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;">Leave Apply</h4>
+
+                      <p class="links cl-effect-1">
+                        <a href="{{url_for('leaveapply')}}" onclick="clickDiv('#list-doc-list')">
+                          Apply leave
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4" style="left: -3%">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body" >
+                        <img src="./static/images2.png" class="fa fa-square fa-stack-2x text-primary" alt="">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-users fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;">Leave Status</h4>
+
+                      <p class="cl-effect-1">
+                        <a href="{{url_for('leave_status')}}" onclick="clickDiv('#list-pat-list')">
+                          View status
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body" >
+                        <img src="./static/imgt.png" class="fa fa-square fa-stack-2x text-primary" alt="">
+
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;">My Leave</h4>
+
+                      <p class="cl-effect-1">
+                        <a href="{{url_for('index')}}" onclick="clickDiv('#list-app-list')">
+                          MY Leave
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                 <div class="row">
+                <div class="col-sm-4" style="left: 13%;margin-top: 5%;">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body" >
+                        <img src="./static/img55.png" class="fa fa-square fa-stack-2x text-primary" alt="">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-list-ul fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;"> view Approved</h4>
+                      <p class="cl-effect-1">
+                        <a href="{{url_for('viewapprovel')}}" onclick="clickDiv('#list-pres-list')">
+                         Leave Approved
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4" style="left: 18%;margin-top: 5%">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body" >
+                         <img src="./static/img77.png" class="fa fa-square fa-stack-2x text-primary" alt="">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-plus fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle" style="margin-top: 5%;">View Rejected</h4>
+                      <p class="cl-effect-1">
+
+                        <a href="{{url_for('viewreject')}}" onclick="clickDiv('#list-ddoc-list')">
+                          Leave Rejected
+                        </a>
+                      </p>
+                    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js"></script>
+  </body>
+</html>

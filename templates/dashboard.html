@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leave application</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<!-- extrem top -->
+    <div class="top">
+        <div class="container">
+        <div class=" banner-text">Streamline your Leave tracking - Hassle free and Effortless </div>
+    </div>
+</div>
+
+
+
+<!-- navigation bar with company logo and signin btn -->
+    <nav>
+        <div class="container main-nav flex">
+            <a href="#" class="company-logo">
+                <img src="static/asset 1.png" alt="logo">
+            </a>
+            <div class="nav-links" id="nav-links">
+                <ul class="flex">
+
+
+                     <li><a href="{{url_for('dashboard')}}" class="hover-link">Home</a></li>
+                    <li><a href="{{url_for('about')}}" class="hover-link">About</a></li>
+                    <li><a href="{{url_for('adminlogin')}}" class="hover-link">Admin Login</a></li>
+                    <li><a href="{{url_for('login')}}" class="hover-link sign-in">Sign in</a></li>
+                    <li><a href="{{url_for('register')}}" class="hover-link sign-up">Sign up</a></li>
+                </ul>
+            </div>
+            <a href="#" class="nav-toggle hover-link" id="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+
+
+
+<!-- header with 2 div's (written document and img) -->
+    <header>
+        <div class="container header-section flex">
+            <div class="header-left">
+                <h2>Leave Mangement module</h2>
+                <p>online student leave management Software made to ease the complete leave management process for your leave easy.Our Leave management module is designed to capture each leave policies such as medical leave, emergency leave ,permission,on-duty etc. Effortless Leave Requests, Instant Approvals, Real-time Tracking - Experience the Future of Leave Management.</p>
+
+            </div>
+            <div class="header-right">
+                <img src="./static/asset 2.png" alt="hero image">
+            </div>
+        </div>
+
+    </header>
+<!-- section 1  -->
+
+    <section class="big-feature-section">
+        <div class="container flex big-feature-container">
+            <div class="feature-imgA">
+                <img src="./static/asset 18.png" alt="">
+            </div>
+            <div class="feature-desc flex">
+                <h2>Apply leave</h2>
+                <p>Allow Student to apply for leave on their own.You can also track each student's attendance history.With the records, you can analyze attendance trends to improve the course. You'll also have access to the reasons behind absences, allowing you to better understand student attendance patterns and make necessary adjustments.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- section 2 -->
+    <section class="big-feature-section">
+        <div class="container flex big-feature-container">
+
+            <div class="feature-desc flex">
+                <h2>Cancel Leave</h2>
+                <p>Sometimes, the reason for taking leave might not happen. Allow your Student also to cancel leave on their own, so that you do not need to call them or reach them for particular reasons.</p>
+            </div>
+            <div class="feature-img">
+                <img src="./static/asset 21.png" alt="">
+            </div>
+        </div>
+    </section>
+
+<!-- section 3 -->
+    <section class="big-feature-section">
+        <div class="container flex big-feature-container">
+            <div class="feature-img">
+                <img src="./static/asset 24.png" alt="">
+            </div>
+            <div class="feature-desc flex">
+                <h2>Approve/Reject Leave Requests</h2>
+                <p>Staff play a crucial role in the leave management process. They are responsible for reviewing and making decisions on leave requests submitted by students. When a leave request comes in, Staff have the authority to either approve or reject it based on various activities such as valide reason, attendence percentage is low, and exam date..</p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- card  -->
+    <section class="example">
+        <div class="container">
+
+            <div class="examples-area flex">
+                <a class="examples-card" href="#" style="background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./static/asset\ 34.jpeg); background-size: cover;">
+                    <h3 class="card-text">Dr.M.KARUNANITHI Chairman</h3>
+                </a>
+                <a class="examples-card" href="#" style="background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./static/asset\ 35.jpeg); background-size: cover;">
+                    <h3 class="card-text">Prof. S. Kuppuswami Executive Director</h3>
+                </a>
+                <a class="examples-card" href="#"style="background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./static/asset\ 36.jpeg); background-size: cover;">
+                    <h3 class="card-text">Dr. V. Kumaravel Director </h3>
+                </a>
+                <a class="examples-card" href="#" style="background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(./static/asset\ 37.jpeg); background-size: cover;">
+                    <h3 class="card-text">Dr. P. Baby Shakila Principal</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- main footer section  -->
+    <footer>
+        <div class="container flex footer-container">
+            <a href="#" class="company-logo">
+
+                <h3>Contact Us</h3>
+                <p>Vivekanandha College of Arts & Sciences<br> for Women (Autonomous)
+                    Elayampalayam,<br>
+                    Tiruchengode - TK,
+                    Namakkal District,<br> Tamilnadu - 637 205, India.<br>
+                    Phone: 04288-234560-66, 04288 - 234894<br>
+                    Email: principal@vicas.org, info@vicas.org</p>
+            </a>
+            <div class="link-column flex">
+                <h4>Useful Links</h4>
+                <a href="{{url_for('dashboard')}}" class="hover-link">Home</a>
+                <a href="{{url_for('about')}}" class="hover-link">About</a>
+                <a href="https://vicas.org/nirf.php" class="hover-link">Achievements</a>
+                <a href="https://vicas.org/Policy.php" class="hover-link">Policies</a>
+
+            </div>
+            <div class="link-column flex">
+                <h4>Our Services</h4>
+                <a href="https://vicas.org/course_offers.php" class="hover-link">Programmes Offered</a>
+                <a href="https://vicas.org/Departments.php" class="hover-link">Departments</a>
+                <a href="https://vicas.org/obe.php" class="hover-link">OBE</a>
+                <a href="https://vicas.org/ResearchProjects.php" class="hover-link">Research Projects</a>
+
+            </div>
+            <div class="link-column flex">
+                <h4>Quick Links</h4>
+                <a href="https://vicas.org/naac.php" class="hover-link">NAAC Reaccreditation</a>
+                <a href="https://vicas.org/socialmedia.php" class="hover-link">Social Media</a>
+                <a href="https://vicas.org/Scholarships.php" class="hover-link">Scholarshipse</a>
+            </div>
+        </div>
+    </footer>
+
+<!-- sub footer section  -->
+    <div class="subfooter">
+        <div class="container flex subfooter-container">
+            <p>© Vivekanandha College of Arts & Sciences for Women 2023. All Rights Reserved </p>
+            <a class="hover-link" href="https://www.facebook.com/VivekanandhaVICAS/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="hover-link" href="https://twitter.com/vivekanandha_in?lang=en"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/eb1e31f588.js" crossorigin="anonymous"></script>
+</body>
+</html>
