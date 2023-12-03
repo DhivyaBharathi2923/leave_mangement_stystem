@@ -1,0 +1,9 @@
+e:
+cd project
+cd leave_mangement
+cd venv
+cd scripts
+activate
+cd ..
+cd ..
+python app.py
